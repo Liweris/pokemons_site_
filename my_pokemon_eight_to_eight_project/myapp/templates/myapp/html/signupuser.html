@@ -1,0 +1,234 @@
+{% csrf_token %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "UTF-8">
+        <title>Регистрация</title>
+        <style>
+            *{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.fon_back {
+    background: url(https://cdn.discordapp.com/attachments/810439924913274907/1033459017659457626/Authorization_fon_back.jpg);
+    height: 100vh;
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.fon_front {
+    background: url(https://cdn.discordapp.com/attachments/810439924913274907/1033459017982423050/Authorization_fon_front.jpg);
+    height: 100%;
+    width: 85%;
+    margin-left: 7.5%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+
+    border-radius: 15% / 30%;
+    opacity: .35;
+
+}
+
+.content_up {
+    height: 7%;
+    width: 100%;
+}
+
+.content_center {
+    height: 86%;
+    width: 100%;
+    position: relative;
+}
+
+.content_center_up {
+    height: 15%;
+    width: 100%;
+    position: absolute;
+}
+
+.content_center_center {
+    height: 65%;
+    width: 100%;
+    position: absolute;
+    top: 15%;
+}
+
+.content_center_center_conteiner {
+    height: 100%;
+    width: 80%;
+    margin-left: 10%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.content_center_center_conteiner_box {
+    height: 100%;
+    width: 35%;
+    margin-top: 2%;
+    display: inline-table;
+    justify-content: space-evenly;
+}
+
+.content_center_center_conteiner_box_in {
+    margin-top: 3%;
+    height: 25%;
+    width: 100%;
+}
+
+.content_center_center_conteiner_box_in_text {
+    width: 100%;
+    height: 40%;
+    text-align: center;
+    padding-top: 0%;
+    padding-bottom: 0%;
+}
+
+.content_center_center_conteiner_box_in_line {
+    width: 80%;
+    height: 40%;
+    margin-left: 10%;
+}
+
+.content_center_down {
+    height: 15%;
+    width: 100%;
+    top: 78%;
+    position: absolute;
+    align-content: center;
+}
+
+.button_register {
+    background-color: #071E33;
+    color: white;
+    border-radius: 2ex;
+
+    border: 5ex;
+    border-color: #071e35;
+    width: 22%;
+    height: 60%;
+    margin-left: 39%;
+    font-size: 1vw;
+    opacity: 0.9;
+}
+
+.button_register:hover {
+    background-color: #0c365d;
+    opacity: 0.9;
+}
+
+.content_down {
+    height: 7%;
+    width: 100%;
+}
+
+.Z1 {
+    position: absolute;
+    left: 35%;
+    margin-top: 2%;
+
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-size: 4vw;
+    opacity: 1.0;
+
+    color: #FFFFFF;
+}
+
+.Z2 {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-size: 1.4vw;
+    opacity: 1.0;
+
+    color: #FFFFFF;
+}
+
+.input_line {
+    background-color: #B0C4DE;
+    height: 100%;
+    width: 90%;
+    font-family: inherit;
+    font-size: 2vw;
+    border: 3px;
+    border-radius: 10px;
+    padding-left: 5%;
+    margin-left: 2.5%;
+    opacity: .80;
+}
+
+.input_line:focus {
+    outline: 0;
+}
+
+.text-field::placeholder {
+    color: #212529;
+    opacity: 0.9;
+  }
+
+    input::-webkit-input-placeholder       {opacity: 1; transition: opacity 0.3s ease;}
+    input::-moz-placeholder                {opacity: 1; transition: opacity 0.3s ease;}
+    input:-moz-placeholder                 {opacity: 1; transition: opacity 0.3s ease;}
+    input:-ms-input-placeholder            {opacity: 1; transition: opacity 0.3s ease;}
+    input:focus::-webkit-input-placeholder {opacity: 0; transition: opacity 0.3s ease;}
+    input:focus::-moz-placeholder          {opacity: 0; transition: opacity 0.3s ease;}
+    input:focus:-moz-placeholder           {opacity: 0; transition: opacity 0.3s ease;}
+    input:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s ease;}
+
+        </style>
+    </head>
+
+    <body>
+        <div class="fon_back">
+            <div class="content_up"></div>
+            <div class="content_center">
+                <form method="POST">{% csrf_token %}
+                <div class="fon_front"></div>
+                <div class="content_center_up">
+                    <h1 class="Z1">Регистрация</h1>
+                </div>
+                <div class="content_center_center">
+                    <div class="content_center_center_conteiner">
+                        <div class="content_center_center_conteiner_box">
+                            <div class="content_center_center_conteiner_box_in">
+                                <div class="content_center_center_conteiner_box_in_text">
+                                    <h2 class="Z2">Логин:</h2><h2 class="Z2" style="color: red">{{name_error}}<h2>
+                                </div>
+                                <div class="content_center_center_conteiner_box_in_line">
+                                    <input class = "input_line text-field" type = "text" placeholder = "Введите логин" name="username" autocomplete="username">
+                                </div>
+                            </div>
+                            <div class="content_center_center_conteiner_box_in">
+                                <div class="content_center_center_conteiner_box_in_text">
+                                    <h2 class="Z2">Пароль:</h2><h2 class="Z2" style="color: red">{{password_error}}<h2>
+                                </div>
+                                <div class="content_center_center_conteiner_box_in_line">
+
+                                    <input class = "input_line text-field" type="password" placeholder = "Введите пароль" name="password1" autocomplete="password1">
+                                </div>
+                            </div>
+                            <div class="content_center_center_conteiner_box_in">
+                                <div class="content_center_center_conteiner_box_in_text">
+                                    <h2 class="Z2">Повторите пароль:</h2>
+                                </div>
+                                <div class="content_center_center_conteiner_box_in_line">
+                                    <input class = "input_line text-field" type="password" placeholder = "Повторите пароль" name="password2" autocomplete="password2">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content_center_down">
+                    <button class="button_register" type="submit">Подтвердить</button>
+                </div>
+                </form>
+            </div>
+            <div class="content_down"></div>
+        </div>
+    </body>
+</html>

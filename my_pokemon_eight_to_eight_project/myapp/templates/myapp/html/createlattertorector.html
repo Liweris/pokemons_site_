@@ -1,0 +1,277 @@
+{% if user.is_authenticated %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "UTF-8">
+        <title>Задать вопрос</title>
+        <style>
+            *{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+body {
+    background-color: #F5F5F5;
+    width: 100%;
+}
+
+.head {
+    background-color: #2b2f53;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-top: -50%;
+    border-radius: 0px 0px 20px 20px;
+    width: 100vw;
+    height: 30vh;
+}
+
+.head_navigation {
+    background-color: #1D1F37;
+    height: 60px;
+    width: 100vw;
+    position: sticky;
+    top: 0;
+    border-radius: 0px 0px 20px 20px;
+    display: flex;
+    justify-content: space-evenly;
+    z-index: 100;
+}
+
+.icon_box {
+    height: 80px;
+    width: 75px;
+    top: -10px;
+    left: 20px;
+    position: relative;
+    text-align: -webkit-center;
+}
+
+.logo_img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.buttons_box {
+    height: 70%;
+    width: 80%;
+    position: relative;
+    top: 12%;
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+.buttons_box_button {
+    height: 100%;
+    width: 20%;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.buttons_box_button:hover {
+    background-color: #191a30;
+}
+
+.buttons_box_button_now {
+    height: 100%;
+    width: 20%;
+    text-align: center;
+    border-radius: 5px;
+    background-color: #262947;
+}
+
+.buttons_box_button_now:hover {
+    background-color: #191a30;
+}
+
+.head_down {
+    height: 25%;
+    width: 95%;
+    margin: 25px;
+    margin-top: 3%;
+    margin-left: 2.5%;
+    padding: 5px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.head_down_in {
+    width: 30%;
+    height: 95%;
+}
+
+.conteiner {
+    background-color: #262947;
+    width: 100%;
+    min-height: 250px;
+    border-radius: 25px;
+    padding: 0.1%;
+    position:absolute;
+    top: 35%;
+    left: 4%;
+    max-width: 1170px;
+    margin: 0 auto;
+}
+
+.card {
+    background-color: white;
+    position: relative;
+    min-height: 250px;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+\
+}
+
+textarea {
+    background-color: white;
+    border: 0;
+    height: 100%;
+    width: 100%;
+    padding: 15px;
+    max-width: 1148px;
+    max-height: 230px;
+    min-width: 1148px;
+    min-height: 230px;
+}
+
+.button_register {
+    background-color: #071E33;
+    color: white;
+    border-radius: 2ex;
+
+    border: 5ex;
+    position:absolute;
+    border-color: #071e35;
+    width: 22%;
+    height: 50px;
+    margin-left: 37%;
+    top: 85%;
+
+    opacity: 0.9;
+}
+
+.button_register:hover {
+    background-color: #0c365d;
+    opacity: 0.9;
+}
+
+.Z1 {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-size: 5vw;
+    line-height: 115px;
+    position: relative;
+    background: none;
+    text-align: center;
+
+    color: #FFFFFF;
+}
+
+.Z2 {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-size: 1.5vw;
+    line-height: 42px;
+    position: relative;
+    background: none;
+
+    color: #FFFFFF;
+}
+
+.input_line {
+    background-color: #B0C4DE;
+    height: 100%;
+    width: 100%;
+    top: 25%;
+    font-family: inherit;
+    font-size: 1.5rem;
+    text-align: center;
+    border: 3px;
+    border-radius: 10px;
+    padding: 5px;
+    opacity: .80;
+}
+
+.input_line:focus {
+    outline: 0;
+}
+
+.text-field::placeholder {
+    color: #212529;
+    opacity: 0.9;
+  }
+
+    input::-webkit-input-placeholder       {opacity: 1; transition: opacity 0.3s ease;}
+    input::-moz-placeholder                {opacity: 1; transition: opacity 0.3s ease;}
+    input:-moz-placeholder                 {opacity: 1; transition: opacity 0.3s ease;}
+    input:-ms-input-placeholder            {opacity: 1; transition: opacity 0.3s ease;}
+    input:focus::-webkit-input-placeholder {opacity: 0; transition: opacity 0.3s ease;}
+    input:focus::-moz-placeholder          {opacity: 0; transition: opacity 0.3s ease;}
+    input:focus:-moz-placeholder           {opacity: 0; transition: opacity 0.3s ease;}
+    input:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s ease;}
+
+        </style>
+    </head>
+    <body>
+    <form method="POST">{% csrf_token %}
+        <div class="head">
+            <div class = "head_navigation">
+                <div class = "icon_box">
+                    <img class = "logo_img" height = "60px" width = "60px" src = "https://psv4.userapi.com/c237031/u186275252/docs/d9/b71695542ab4/Norm_Pokemon.png?extra=6MjQKQ09JqisRH0VSKexULZlTgSJ1UQjIFkMp5rbarKVgbuYDOj6RrzSBL4TxdI6HGxBbNsLKIxvvZyfmUPblCgwNrbX97zmGa-2-e0g3SKCjagUejeLfBsevRCmUoylceBROnjb7-Bc6JYoQOKp8bZF1Q">
+                </div>
+                <div class = "buttons_box">
+                    <div class="buttons_box_button">
+                        <form action="{% url 'newsstud' %}" target="_blank">{% csrf_token %}
+                            <button class="Z2">Новости</button>
+                        </form>
+                    </div>
+                    <div class="buttons_box_button">
+                        <form action="{% url 'currentmyapp' %}" target="_blank">{% csrf_token %}
+                            <button class="Z2">Расписание</button>
+                        </form>
+                    </div>
+                    <div class="buttons_box_button">
+                        <form action="{% url 'lattertorector' %}" target="_blank">{% csrf_token %}
+                            <button class="Z2">Письма ректору</button>
+                        </form>
+                    </div>
+                    <div class="buttons_box_button">
+                        <form method="POST" action="{% url 'signoutuser' %}" target="_blank" >{% csrf_token %}
+                            <button type="submit" class="Z2">Выйти</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="head_down">
+                <div class="head_down_in">
+                    <input class = "input_line text-field" type = "text" pname="username" value="{{ user.username }}" readonly />
+                </div>
+                <div class="head_down_in">
+                    <input class = "input_line text-field" type = "text" placeholder = "Тема обращения" name="title" />
+                </div>
+            </div>
+        </div>
+        <div class="conteiner">
+            <div class="card">
+                <input name="content" class="card">
+            </div>
+        </div>
+        <button class="button_register" type="submit">Отправить</button>
+    </form>
+    </body>
+</html>
+{% else %}
+    <h1>Пожалуйста, авторизируйтесь.</h1>
+<a href="{% url 'signinuser' %}"><button>Войти</button></a>
+{% endif %}

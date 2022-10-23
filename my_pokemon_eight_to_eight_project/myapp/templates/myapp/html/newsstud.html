@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "UTF-8">
+        <title>Новости</title>
+        <link rel = "icon" href = "images/Norm_pokemon.png">
+        <link rel = "stylesheet" href = "News.css">
+        <style>
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+body {
+    background-color: #F5F5F5;
+    width: 100%;
+}
+
+.head {
+    background-image: url(https://sun1-13.userapi.com/impg/mjv9WyeqgR_W9BUSNKA4IN8ayfwoiFOwEjdwYA/6sFs39MRhHU.jpg?size=1728x2160&quality=96&sign=96e79840df10ff9ced8020884309d329&type=album);
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-top: -50%;
+    width: 100vw;
+    height: 40vh;
+    border-radius: 0px 0px 20px 20px;
+}
+
+.head_navigation {
+    background-color: #1D1F37;
+    height: 60px;
+    width: 100vw;
+    position: sticky;
+    top: 0;
+    border-radius: 0px 0px 20px 20px;
+    display: flex;
+    justify-content: space-evenly;
+    z-index: 100;
+}
+
+.icon_box {
+    height: 80px;
+    width: 75px;
+    top: -10px;
+    left: 20px;
+    position: relative;
+    text-align: -webkit-center;
+}
+
+.logo_img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.buttons_box {
+    height: 70%;
+    width: 80%;
+    position: relative;
+    top: 12%;
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+.buttons_box_button {
+    height: 100%;
+    width: 20%;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.buttons_box_button:hover {
+    background-color: #191a30;
+}
+
+.buttons_box_button_now {
+    height: 100%;
+    width: 20%;
+    text-align: center;
+    border-radius: 5px;
+    background-color: #262947;
+
+}
+
+.container {
+    max-width: 1170px;
+    margin: 0 auto;
+}
+
+.grid {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-left: -1%;
+    margin-right: -1%;
+
+}
+
+.item {
+    width: 30%;
+    padding-left: 1%;
+    padding-right: 1%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.card {
+    background-color: white;
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.card_prew {
+    margin: 0;
+    position: relative;
+    height: 200px;
+    background-size: cover;
+    padding-bottom: 50px;
+}
+
+.card_prew_img {
+    width: 100%;
+    height: 140%;
+    object-fit: cover;
+}
+
+.card_prew_text {
+    background: rgba(0, 0, 0, 0.5);
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-style: normal;
+    position: absolute;
+    color: #FFFFFF;
+    bottom:0;
+    width: 100%;
+    text-align: center;
+    padding: 5px;
+    font-size: 2vw;
+    min-height: 20px;
+    max-height: 120px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.card_body {
+    margin-bottom: 0;
+    display: flex;
+    padding: 20px;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card_title {
+    margin: 0;
+}
+
+.card_desk_top {
+    margin-bottom: 0;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-size: 1.2vw;
+    text-indent: 1.5em;
+    text-align: justify;
+    display: flex;
+    word-break: break-word;
+    margin-top: 5px;
+}
+
+.card_desk_down {
+    margin-top: 15px;
+    text-align: right;
+}
+
+.card_date {
+    color: grey;
+}
+
+.Z1 {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-size: 6vw;
+    line-height: 210%;
+    position: relative;
+    background: none;
+    text-align: center;
+
+    color: #FFFFFF;
+}
+
+.Z2 {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-size: 1.2vw;
+    line-height: 42px;
+    position: relative;
+    background: none;
+
+    color: #FFFFFF;
+}
+
+#text_shadow {
+    text-shadow: 0 0 5px white,0 0 10px #f8f9f9,0 0 15px #d9f0c3,0 0 20px white;
+}
+        </style>
+    </head>
+    <body>
+        <div class="head">
+            <div class = "head_navigation">
+                <div class = "icon_box">
+                    <img class = "logo_img" height = "60px" width = "60px" src = "https://psv4.userapi.com/c237031/u186275252/docs/d9/b71695542ab4/Norm_Pokemon.png?extra=6MjQKQ09JqisRH0VSKexULZlTgSJ1UQjIFkMp5rbarKVgbuYDOj6RrzSBL4TxdI6HGxBbNsLKIxvvZyfmUPblCgwNrbX97zmGa-2-e0g3SKCjagUejeLfBsevRCmUoylceBROnjb7-Bc6JYoQOKp8bZF1Q">
+                </div>
+                <div class = "buttons_box">
+                    <div class="buttons_box_button_now">
+                        <form action="{% url 'newsstud' %}" target="_blank">{% csrf_token %}
+                            <button class="Z2">Новости</button>
+                        </form>
+                    </div>
+                    <div class="buttons_box_button">
+                        <form action="{% url 'currentmyapp' %}" target="_blank">{% csrf_token %}
+                            <button class="Z2">Расписание</button>
+                        </form>
+                    </div>
+                    <div class="buttons_box_button">
+                        <form action="{% url 'lattertorector' %}" target="_blank">{% csrf_token %}
+                            <button class="Z2">Письма ректору</button>
+                        </form>
+                    </div>
+                    {% if user.is_authenticated %}
+                    <div class="buttons_box_button">
+                        <form method="POST" action="{% url 'signoutuser' %}" target="_blank" >{% csrf_token %}
+                            <button type="submit" class="Z2">Выйти</button>
+                        </form>
+                    </div>
+                    {% else %}
+                    <div class="buttons_box_button">
+                        <form action="{% url 'signinuser' %}" target="_blank" method="GET">{% csrf_token %}
+                            <button class="Z2" type="submit">Войти</button>
+                        </form>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+            <p class="Z1">Что нового в ВУЗе?</p>
+        </div>
+        <div class="container">
+            <ul class="grid">
+                {% for new in news %}
+                <li class="item">
+                    <div class="card">
+                        <div class="card_prew">
+                            <img class="card_prew_img" src="/media/{{ new.img }}">
+                            <div class="card_prew_text">
+                                <p class="card_title">{{ new.title }}</p>
+                            </div>
+                        </div>
+                        <div class="card_body">
+                            <div class="card_desk_top">
+                                <p>
+                                {{ new.content }}
+                                </p>
+                            </div>
+                            <div class="card_desk_down">
+                                <span class="card_date">
+                                    {{ new.date }}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </body>
+</html>

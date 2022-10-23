@@ -1,0 +1,247 @@
+{% csrf_token %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "UTF-8">
+        <title>Вход</title>
+        <style>
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.fon_back {
+    background: url(https://cdn.discordapp.com/attachments/810439924913274907/1033459017659457626/Authorization_fon_back.jpg);
+    height: 100vh;
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.fon_front {
+    background: url(https://cdn.discordapp.com/attachments/810439924913274907/1033459017982423050/Authorization_fon_front.jpg);
+    height: 50vh;
+    width: 50vw;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 38.23vh;
+    left: 31.2vw;
+    transform: translate(-20%, -30%);
+
+    border: 1px solid #3A4345;
+    border-radius: 15% / 30%;
+    padding: 5em;
+    opacity: .35;
+
+}
+
+.front_content {
+
+    height: 40vh;
+    width: 50vw;
+    position: absolute;
+    top: 48vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+
+    border-radius: 15% / 30%;
+    padding: 5em;
+}
+
+.front_content_up {
+    padding-bottom: 20px;
+
+    height: 20%;
+    width: 100%;
+    position: center;
+    text-align: center;
+}
+
+.front_content_center {
+    height: 65%;
+    width: 100%;
+    position: center;
+    text-align: center;
+}
+
+.login {
+    width: 100%;
+    height: 50%;
+}
+
+.password {
+    width: 100%;
+    height: 50%;
+    top: 50%;
+}
+
+.content_center_text {
+    width: 100%;
+    height: 40%;
+    align-content: center;
+    text-align: center;
+}
+
+.content_center_line {
+    width: 100%;
+    height: 60%;
+    align-content: center;
+    top: 50%;
+}
+
+.front_content_down {
+
+    width: 100%;
+    height: 50%;
+    margin-top: 5%;
+}
+
+.front_content_down_up {
+
+    align-content: center;
+    width: 100%;
+    height: 60%;
+}
+
+.button_input {
+    background-color: #071E33;
+    color: white;
+    border-radius: 2ex;
+    font-size: 1vw;
+    border: 5ex;
+    border-color: #071e35;
+    width: 40%;
+    height: 100%;
+    opacity: 0.9;
+}
+
+.button_input:hover {
+    background-color: #0c365d;
+    opacity: 0.9;
+}
+
+.front_content_down_text {
+    color: #FFFFFF;
+    align-content: center;
+    width: 100%;
+    height: 35%;
+    margin-top: 2%;
+}
+
+.Z1 {
+    left: 25vw;
+    top: 5vh;
+
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-size: 4vw;
+    opacity: 1.0;
+
+    color: #FFFFFF;
+}
+
+.Z2 {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-size: 1.4vw;
+    opacity: 1.0;
+
+    color: #FFFFFF;
+}
+
+.Z3 {
+
+    font-style: normal;
+    font-size: 2vw;
+    opacity: 1.0;
+
+    color: #FFFFFF;
+}
+
+.input_line {
+    background-color: #B0C4DE;
+    height: 70%;
+    width: 37%;
+    top: 25%;
+    font-family: inherit;
+    font-size: 1.5rem;
+    border: 3px;
+    border-radius: 10px;
+    padding-left: 23px;
+    opacity: .80;
+}
+
+.input_line:focus {
+    outline: 0;
+}
+
+.text-field::placeholder {
+    color: #212529;
+    opacity: 0.9;
+  }
+a{
+    font-size: 1vw;
+    color: white;
+    text-decoration-line: none;
+}
+
+a:hover{
+    color: white;
+    text-decoration: solid;
+}
+
+    input::-webkit-input-placeholder       {opacity: 1; transition: opacity 0.3s ease;}
+    input::-moz-placeholder                {opacity: 1; transition: opacity 0.3s ease;}
+    input:-moz-placeholder                 {opacity: 1; transition: opacity 0.3s ease;}
+    input:-ms-input-placeholder            {opacity: 1; transition: opacity 0.3s ease;}
+    input:focus::-webkit-input-placeholder {opacity: 0; transition: opacity 0.3s ease;}
+    input:focus::-moz-placeholder          {opacity: 0; transition: opacity 0.3s ease;}
+    input:focus:-moz-placeholder           {opacity: 0; transition: opacity 0.3s ease;}
+    input:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s ease;}
+        </style>
+    </head>
+    
+    <body>
+        <div class="fon_back">
+            <div class="fon_front"></div>
+            <div class="front_content">
+                <div class="front_content_up">
+                    <h1 class="Z1">Вход</h1>
+                </div>
+                <div class="front_content_center">
+                    <form method="POST">{% csrf_token %}
+                    <div class="login">
+
+                        <div class="content_center_text">
+                            <h2 class="Z2">Логин:</h2>
+                        </div>
+                        <div class="content_center_line">
+                            <input class = "input_line text-field" type = "text" placeholder = "Введите логин" name="username" autocomplete="username">
+                        </div>
+                    </div>
+                    <div class="password">
+                        <div class="content_center_text">
+                            <h2 class="Z2">Пароль:</h2>
+                        </div>
+                        <div class="content_center_line">
+                            <input class = "input_line text-field" type = "text" placeholder = "Введите пароль" name="password" autocomplete="password">
+                        </div>
+                    </div>
+                    <div class="front_content_down">
+                        <div class="front_content_down_up">
+                            <button class="button_input" type="submit">Войти</button>
+                        </div>
+                        <div class="front_content_down_text">
+                            <a href="{% url 'signupuser' %}">Регистрация</a>
+                        </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

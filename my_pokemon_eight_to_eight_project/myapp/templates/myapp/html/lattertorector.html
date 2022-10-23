@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "UTF-8">
+        <title>Список обращений</title>
+        <style>
+            *{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+body {
+    background-color: #F5F5F5;
+    width: 100%;
+}
+
+.head {
+    background-color: #2b2f53;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-top: -50%;
+    border-radius: 0px 0px 20px 20px;
+    width: 100vw;
+    height: 30vh;
+}
+
+.head_navigation {
+    background-color: #1D1F37;
+    height: 60px;
+    width: 100vw;
+    position: sticky;
+    top: 0;
+    border-radius: 0px 0px 20px 20px;
+    display: flex;
+    justify-content: space-evenly;
+    z-index: 100;
+}
+
+.icon_box {
+    height: 80px;
+    width: 75px;
+    top: -10px;
+    left: 20px;
+    position: relative;
+    text-align: -webkit-center;
+}
+
+.logo_img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.buttons_box {
+    height: 70%;
+    width: 80%;
+    position: relative;
+    top: 12%;
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+.buttons_box_button {
+    height: 100%;
+    width: 20%;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.buttons_box_button:hover {
+    background-color: #191a30;
+}
+
+.buttons_box_button_now {
+    height: 100%;
+    width: 20%;
+    text-align: center;
+    border-radius: 5px;
+    background-color: #262947;
+}
+
+.buttons_box_button_now:hover {
+    background-color: #191a30;
+}
+
+.container {
+    max-width: 1170px;
+    margin: 0 auto;
+}
+
+.grid {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-left: -1%;
+    margin-right: -1%;
+}
+
+.item {
+    background-color: #262947;
+    width: 100%;
+    min-height: 150px;
+    border-radius: 26px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.card {
+    background-color: white;
+    position: relative;
+    min-height: 150px;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card_img_box {
+    background-color: #2b2f53;
+    border-radius: 25px 0 0 25px;
+    position: relative;
+    height: 200px;
+    width: 200px;
+    margin: 0;
+    background-size: cover;
+}
+
+.card_img {
+    background-color: #2b2f53;
+    border-radius: 25px 0 0 25px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position:relative;
+}
+
+.card_img_text {
+    background: rgba(0, 0, 0, 0.5);
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-style: normal;
+    color: #FFFFFF;
+    margin-bottom: 30px;
+    text-align: center;
+    padding: 7px;
+    font-size: 1vw;
+    max-height: 35%;
+    position:absolute;
+    bottom:0;
+}
+
+.card_text {
+    position: absolute;
+    left: 18%;
+    height: 80%;
+    width: 76%;
+    margin: 20px;
+    padding: 10px;
+    word-break: normal;
+    text-align: justify;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-size: 1.2vw;
+    text-indent: 1.5em;
+    text-align: justify;
+}
+
+.Z1 {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-size: 5vw;
+    line-height: 115px;
+    position: relative;
+    background: none;
+    text-align: center;
+
+    color: #FFFFFF;
+}
+
+.Z2 {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-size: 1.5vw;
+    line-height: 42px;
+    position: relative;
+    background: none;
+
+    color: #FFFFFF;
+}
+
+#text_shadow {
+    text-shadow: 0 0 5px white,0 0 10px #f8f9f9,0 0 15px #d9f0c3,0 0 20px white;
+}
+        </style>
+    </head>
+    <body>
+        <div class="head">
+            <div class = "head_navigation">
+                <div class = "icon_box">
+                    <img class = "logo_img" height = "60px" width = "60px" src = "https://psv4.userapi.com/c237031/u186275252/docs/d9/b71695542ab4/Norm_Pokemon.png?extra=6MjQKQ09JqisRH0VSKexULZlTgSJ1UQjIFkMp5rbarKVgbuYDOj6RrzSBL4TxdI6HGxBbNsLKIxvvZyfmUPblCgwNrbX97zmGa-2-e0g3SKCjagUejeLfBsevRCmUoylceBROnjb7-Bc6JYoQOKp8bZF1Q">
+                </div>
+                <div class = "buttons_box">
+                    <div class="buttons_box_button">
+                        <form action="{% url 'newsstud' %}" target="_blank">{% csrf_token %}
+                            <button class="Z2">Новости</button>
+                        </form>
+                    </div>
+                    <div class="buttons_box_button">
+                        <form action="{% url 'currentmyapp' %}" target="_blank">{% csrf_token %}
+                            <button class="Z2">Расписание</button>
+                        </form>
+                    </div>
+                    <div class="buttons_box_button_now">
+                        <form action="{% url 'createlattertorector' %}" target="_blank">{% csrf_token %}
+                            <button class="Z2">Написать письмо</button>
+                        </form>
+                    </div>
+                    {% if user.is_authenticated %}
+                    <div class="buttons_box_button">
+                        <form method="POST" action="{% url 'signoutuser' %}" target="_blank" >{% csrf_token %}
+                            <button type="submit" class="Z2">Выйти</button>
+                        </form>
+                    </div>
+                    {% else %}
+                    <div class="buttons_box_button">
+                        <form action="{% url 'signinuser' %}" target="_blank" method="GET">{% csrf_token %}
+                            <button class="Z2" type="submit">Войти</button>
+                        </form>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+            <p class="Z1">Список обращений</p>
+        </div>
+        <div class="container">
+            <ul class="grid">
+                {% for later in latters %}
+                <li class="item">
+                    <div class="card">
+                        <div class="card_img_box">
+                            <img src="https://cdn.discordapp.com/attachments/810439924913274907/1033459017659457626/Authorization_fon_back.jpg" class="card_img">
+                            <div class="card_img_text">
+                                <p>{{later.username}}</p>
+                                <p>{{later.date}}</p>
+                            </div>
+                        </div>
+                        <div class="card_text">
+                            <p>{{later.title}}</p>
+                            <p>{{later.content}}</p>
+                        </div>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </body>
+</html>
