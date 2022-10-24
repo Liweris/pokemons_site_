@@ -223,7 +223,7 @@ textarea {
         </style>
     </head>
     <body>
-    <form method="POST">{% csrf_token %}
+    <form method="POST" id="form">{% csrf_token %}
         <div class="head">
             <div class = "head_navigation">
                 <div class = "icon_box">
@@ -231,23 +231,23 @@ textarea {
                 </div>
                 <div class = "buttons_box">
                     <div class="buttons_box_button">
-                        <form action="{% url 'newsstud' %}" target="_blank">{% csrf_token %}
-                            <button class="Z2">Новости</button>
+                        <form action="{% url 'newsstud' %}" target="_blank" id="news">{% csrf_token %}
+                            <button class="Z2" form="news">Новости</button>
                         </form>
                     </div>
                     <div class="buttons_box_button">
-                        <form action="{% url 'currentmyapp' %}" target="_blank">{% csrf_token %}
-                            <button class="Z2">Расписание</button>
+                        <form action="{% url 'currentmyapp' %}" target="_blank" id="shadules">{% csrf_token %}
+                            <button class="Z2" form="shadules">Расписание</button>
                         </form>
                     </div>
                     <div class="buttons_box_button">
-                        <form action="{% url 'lattertorector' %}" target="_blank">{% csrf_token %}
-                            <button class="Z2">Письма ректору</button>
+                        <form action="{% url 'lattertorector' %}" target="_blank" id="latters">{% csrf_token %}
+                            <button class="Z2" form="latters">Письма ректору</button>
                         </form>
                     </div>
                     <div class="buttons_box_button">
-                        <form method="POST" action="{% url 'signoutuser' %}" target="_blank" >{% csrf_token %}
-                            <button type="submit" class="Z2">Выйти</button>
+                        <form method="POST" action="{% url 'signoutuser' %}" target="_blank" id="exit">{% csrf_token %}
+                            <button type="submit" class="Z2" form="exit">Выйти</button>
                         </form>
                     </div>
                 </div>
@@ -255,7 +255,7 @@ textarea {
 
             <div class="head_down">
                 <div class="head_down_in">
-                    <input class = "input_line text-field" type = "text" pname="username" value="{{ user.username }}" readonly />
+                    <input class = "input_line text-field" type = "text" name="username" value="{{ user.username }}" readonly />
                 </div>
                 <div class="head_down_in">
                     <input class = "input_line text-field" type = "text" placeholder = "Тема обращения" name="title" />
@@ -264,10 +264,15 @@ textarea {
         </div>
         <div class="conteiner">
             <div class="card">
-                <input name="content" class="card">
+                <input name="content" class="card" form="form">
             </div>
         </div>
-        <button class="button_register" type="submit">Отправить</button>
+        {{success}}
+        {{error}}
+        {{content}}
+        {{username}}
+        {{title}}
+        <button class="button_register" type="submit" form="form">Отправить</button>
     </form>
     </body>
 </html>

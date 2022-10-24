@@ -86,9 +86,9 @@ def createlattertorector(request):
             later.content = request.POST.get('content')
             later.username = request.POST.get('username')
             later.save()
-            return render(request, 'myapp/html/lattertorector.html', {'success':'Письмо было отправлено!'})
+            return redirect('lattertorector')
         except:
-            return render(request, 'myapp/html/createlattertorector.html', {'error':'Произошла ошибка!'})
+            return render(request, 'myapp/html/createlattertorector.html', {'error':'Произошла ошибка!', 'title':later.title, 'content':later.content, 'username':later.username})
     else:
         return render(request, 'myapp/html/createlattertorector.html')
 

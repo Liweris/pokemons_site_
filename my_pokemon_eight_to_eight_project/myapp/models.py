@@ -47,3 +47,4 @@ class LattersToRector(models.Model):
     content = models.TextField(max_length=500)
     username = models.CharField(max_length=50)
     date = models.DateTimeField(default=timezone.now)
+    confirmation = models.BooleanField(default=False)
